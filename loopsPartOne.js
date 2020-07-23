@@ -23,7 +23,7 @@
 */
 
 /* ---------------------------------------------------------------------------
-    Exercise One
+     Exercise One
 
     Building a routine
 
@@ -44,6 +44,11 @@
 
 function addExerciseToRoutine(routine, exercise, numRepetitions) {
   // Your Code Here!
+  let index = 0;
+  while (index < numRepetitions) {
+    routine.push(exercise);
+    index++;
+  }
 }
 
 /* 
@@ -98,6 +103,13 @@ function doAction(action) {
 
 function performRoutine(routine) {
   // Your Code Here!
+  let index = 0;
+
+  while (routine.length > index) {
+    let exercise = routine[index];
+    doAction(exercise);
+    index++;
+  }
 }
 
 /* 
@@ -146,8 +158,19 @@ console.log(compareArray(routineTwo, actionsPerformed));
 */
 
 function countRepsOfActionInRoutine(routine, action) {
-  let count = 0;
   // Your Code Here!
+  var index = 0;
+  var count = 0;
+  var routineLength = routine.length;
+
+  while (index < routineLength) {
+    index++;
+
+    if (routine[index] == action) {
+      count++;
+    }
+  }
+
   return count;
 }
 
@@ -227,6 +250,21 @@ console.log(countRepsOfActionInRoutine(routineThree, "crunch") == 0);
 
 function removeExerciseFromRoutine(routine, exercise) {
   // Your Code Here!
+
+  var index = 0;
+  var routineLength = routine.length;
+
+  while (index < routineLength) {
+    if (routine[index] == exercise) {
+      console.log("removed " + exercise + " at index " + index);
+      routine.splice(index, 1);
+      index--;
+    } else {
+      index++;
+    }
+
+    routineFour = routine;
+  }
 }
 
 /*
